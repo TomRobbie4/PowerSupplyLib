@@ -1,6 +1,9 @@
-from PySide6.QtWidgets import QApplication
-from src.powerSupply import powerSupply_
 import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+
+from PySide6.QtWidgets import QApplication
+from powerSupply import powerSupply_
 import time
 
 
