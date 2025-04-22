@@ -3,6 +3,7 @@
 A Python library based on **PySide6** for controlling a multi-channel module via a serial port (up to 120 channels).  
 Allows individual channel opening/closing and setting the **power (duty cycle)** for each.
 
+-    Note that those function are meant to work with a pyside6 UI, if you want to use them in a script pleaser refer to the template and example
 ---
 
 ## 🚀 Features
