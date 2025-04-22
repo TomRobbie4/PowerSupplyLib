@@ -3,7 +3,6 @@ from powerSupply import powerSupply_
 import sys
 import time
 
-stay = True
 
 def main():
     psu = powerSupply_()
@@ -17,9 +16,8 @@ def main():
 
     # put "psu.serialPort.waitForBytesWritten(10)" between each command
     # refer to "example.py" if needed
-    while(stay):
     # ------------ Your code here ------------
-        print("your script")
+    
     # ----------------------------------------
     
 
