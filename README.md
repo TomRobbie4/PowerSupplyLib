@@ -94,25 +94,3 @@ class powerSupply_:
 
 ```
 
-📄 Usage Example
-
-```bash
-from powerSupply import *
-
-# Initialize the power supply with the serial port
-psu = powerSupply_()
-psu.portName = "COM3"
-psu.openSerial()
-
-# Open and configure channel 1
-psu.CH1.open()
-psu.CH1.duty = 2048
-psu.CH1.setDuty()  # Example of setting the duty cycle to 50%
-
-# Close channel 1
-psu.CH1.close()
-
-# Close the serial port
-psu.closeSerial()
-
-```
