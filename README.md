@@ -18,3 +18,21 @@ Permet l’ouverture/fermeture individuelle des canaux et le réglage de la **pu
 
 ```bash
 pip install PySide6
+```
+---
+
+## Methods
+
+```bash
+/**
+ * @fn setMode
+ * @brief set power mode 
+ * @param powerMode Set power mode,three are normal mode and power down mode.
+ * @n               The following are three modes of power down.
+ * @n               MCP4725_POWER_DOWN_1KRES      1 kΩ resistor to ground
+ * @n               MCP4725_POWER_DOWN_100KRES    100 kΩ resistor to ground
+ * @n               MCP4725_POWER_DOWN_500KRES    500 kΩ resistor to ground
+ * @return None
+ */
+```
+
