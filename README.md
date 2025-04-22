@@ -97,7 +97,7 @@ class powerSupply_:
 📄 Usage Example
 
 ```bash
-from PowerSupplyLib import powerSupply_
+from powerSupply import *
 
 # Initialize the power supply with the serial port
 psu = powerSupply_()
@@ -106,7 +106,8 @@ psu.openSerial()
 
 # Open and configure channel 1
 psu.CH1.open()
-psu.CH1.setDuty(2048)  # Example of setting the duty cycle to 50%
+psu.CH1.duty = 2048
+psu.CH1.setDuty()  # Example of setting the duty cycle to 50%
 
 # Close channel 1
 psu.CH1.close()
