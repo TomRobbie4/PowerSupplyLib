@@ -1,5 +1,4 @@
 from PySide6.QtSerialPort import QSerialPort, QSerialPortInfo
-from PySide6.QtCore import QIODevice
 from dataclasses import dataclass, field
 
 @dataclass
@@ -99,7 +98,7 @@ class powerSupply_:
         """
         self.serialPort.setPortName(self.portName)
         if not self.serialPort.isOpen():
-            if self.serialPort.open(QIODevice.ReadWrite):
+            if self.serialPort.open(QSerialPort.ReadWrite):
                 return 0
         return 1
 
