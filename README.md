@@ -106,7 +106,7 @@ psu.openSerial()
 
 # Open and configure channel 1
 psu.CH1.open()
-psu.CH1.setDuty(32768)  # Example of setting the duty cycle to 50%
+psu.CH1.setDuty(2048)  # Example of setting the duty cycle to 50%
 
 # Close channel 1
 psu.CH1.close()
