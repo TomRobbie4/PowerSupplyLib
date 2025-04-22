@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import QApplication
-from powerSupply import powerSupply_
+from src.powerSupply import powerSupply_
 import sys
 import time
 
