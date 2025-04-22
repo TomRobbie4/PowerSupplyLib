@@ -1,116 +1,117 @@
 # PowerSupplyLib ⚡
 
-Une librairie Python basée sur **PySide6** pour le contrôle d'un module multi-canaux via un port série (jusqu'à 120 canaux).  
-Permet l’ouverture/fermeture individuelle des canaux et le réglage de la **puissance (duty cycle)** sur chacun.
+A Python library based on **PySide6** for controlling a multi-channel module via a serial port (up to 120 channels).  
+Allows individual channel opening/closing and setting the **power (duty cycle)** for each.
 
 ---
 
-## 🚀 Fonctionnalités
+## 🚀 Features
 
-- 🔌 Ouverture/fermeture automatique du port série
-- 🎚️ Contrôle jusqu’à 120 canaux indépendants
-- 📤 Envoi de commandes simples sur port série (open, close, duty)
-- 📦 Intégration facile dans une GUI PySide6/Qt
+- 🔌 Automatic opening/closing of the serial port
+- 🎚️ Control of up to 120 independent channels
+- 📤 Send simple commands over the serial port (open, close, duty)
+- 📦 Easy integration into a PySide6/Qt GUI
 
 ---
 
-## 🧱 Dépendances
+## 🧱 Dependencies
 
 ```bash
 pip install PySide6
 ```
 ---
 
-## 📚 Classes et Méthodes
+## 📚 Classes and Methods
 
 ```bash
 @dataclass
 class Channel_:
     """
-    Représente un canal de contrôle.
+    Represents a control channel.
 
-    Attributs :
-        number (int) : Numéro du canal (1 à 120).
-        duty (int) : Valeur du duty cycle à appliquer (0 à 65535).
-        status (bool) : Statut activé/désactivé du canal.
-        serialPort (QSerialPort) : Port série utilisé pour communiquer.
+    Attributes:
+        number (int): Channel number (1 to 120).
+        duty (int): Duty cycle value to apply (0 to 65535).
+        status (bool): Channel status (True for active, False for inactive).
+        serialPort (QSerialPort): Serial port used for communication.
     """
 
     def open(self):
         """
-        Active le canal.
+        Activates the channel.
 
-        Retour :
-            int : 0 si succès, 1 si erreur.
+        Returns:
+            int: 0 if success, 1 if error.
         """
 
     def close(self):
         """
-        Désactive le canal.
+        Deactivates the channel.
 
-        Retour :
-            int : 0 si succès, 1 si erreur.
+        Returns:
+            int: 0 if success, 1 if error.
         """
 
     def setDuty(self):
         """
-        Applique la valeur de duty cycle au canal.
+        Applies the duty cycle value to the channel.
 
-        Retour :
-            int : 0 si succès, 1 si erreur.
+        Returns:
+            int: 0 if success, 1 if error.
         """
 
 @dataclass
 class powerSupply_:
     """
-    Gestionnaire global d'alimentation, permettant le contrôle de jusqu'à 120 canaux via un port série.
+    Global power supply manager, allowing control of up to 120 channels via a serial port.
 
-    Attributs :
-        portName (str) : Nom du port série (ex: "COM3").
-        serialPort (QSerialPort) : Objet PySide6 pour la communication série.
-        CH1 à CH120 (Channel_) : Canaux instanciés automatiquement.
+    Attributes:
+        portName (str): Name of the serial port (e.g., "COM3").
+        serialPort (QSerialPort): PySide6 object for serial communication.
+        CH1 to CH120 (Channel_): Channels automatically instantiated.
     """
 
     def __post_init__(self):
         """
-        Initialise les 120 canaux et configure le port série.
+        Initializes the 120 channels and configures the serial port.
         """
 
     def openSerial(self):
         """
-        Ouvre le port série configuré.
+        Opens the configured serial port.
 
-        Retour :
-            int : 0 si succès, 1 si erreur.
+        Returns:
+            int: 0 if success, 1 if error.
         """
 
     def closeSerial(self):
         """
-        Ferme le port série s’il est ouvert.
+        Closes the serial port if it is open.
 
-        Retour :
-            int : 0 si succès, 1 si erreur.
+        Returns:
+            int: 0 if success, 1 if error.
         """
 
 ```
 
-📄 Exemple d'utilisation
+📄 Usage Example
 
 ```bash
 from PowerSupplyLib import powerSupply_
 
-# Initialisation de l'alimentation avec le port série
+# Initialize the power supply with the serial port
 psu = powerSupply_()
 psu.portName = "COM3"
 psu.openSerial()
 
-# Ouvrir et configurer le canal 1
+# Open and configure channel 1
 psu.CH1.open()
-psu.CH1.setDuty(32768)  # Exemple de setting du duty cycle à 50%
+psu.CH1.setDuty(32768)  # Example of setting the duty cycle to 50%
 
-# Fermer le canal 1
+# Close channel 1
 psu.CH1.close()
 
-# Fermer le port série
+# Close the serial port
 psu.closeSerial()
+
 ```
