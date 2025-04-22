@@ -9,7 +9,7 @@ class Channel_:
 
     Attributes:
         number (int): Channel number (1 to 120).
-        duty (int): Duty cycle value to apply (0 to 65535).
+        duty (int): Duty cycle value to apply (0 to 4095).
         status (bool): Channel enabled/disabled status.
         serialPort (QSerialPort): Serial port used for communication.
     """
