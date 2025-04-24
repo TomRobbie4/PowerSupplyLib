@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compiler UI en Python",
+            "type": "shell",
+            "command": "pyside6-uic",
+            "args": [
+                "${workspaceFolder}/Interface.ui",
+                "-o",
+                "${workspaceFolder}/Interface.py"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "Tâche pour compiler un fichier .ui en Python"
+        }
+    ]
+ }
+ 

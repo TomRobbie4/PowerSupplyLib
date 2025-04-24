@@ -1,0 +1,15 @@
+{
+    "runOnSave.commands": [
+        {
+            "match": "\\.ui$",
+            "command": "task: Compiler UI en Python"
+        }
+    ],
+    "python.languageServer": "Pylance",
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingModuleSource": "none",
+        "reportShadowedImports": "none"
+    },
+    "circuitpython.board.version": null
+ }
+ 
